@@ -1,0 +1,110 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jun 2, 2016, 10:11:05 AM
+    Author     : apprentice
+*/
+
+.modal .modal-body {
+    max-height: 420px;
+    overflow-y: auto;
+}
+.modal .modal-content  {
+       background-color: 	#C0C0C0;
+}
+
+.modal .modal-header    {
+    text-align: center;
+}
+
+.table   {
+    text-align: center;
+    background-color: white; 
+    border: 3px black solid;
+}
+#asd    {
+    color: black;
+}
+
+tr:hover {
+    background-color: lightgrey;
+}
+
+/*tr:nth-child(even) {
+    background-color: #D3D3D3;
+}*/
+#one  {
+    background-color: #000;
+    color: white;
+}
+
+.panel-title    {
+    font-size: 24px;
+}
+
+/*#f{
+    border: 3px solid black;
+    background-color: #C0C0C0;
+}*/
+
+.panel {
+    border: 2px solid black;
+}
+
+table th  {
+    text-align: center;
+    /*    background-color: #000;
+        color: white;*/
+    font-size: 20px;
+}
+
+
+#two    {
+    background-color: #C0C0C0;
+}
+
+td  {
+    font-size: 18px;
+    color: black;
+    border: 2px solid black;
+}
+.navbar-nav.nav-justified > li{
+    background-color: black;
+    float:none;
+    font-size: 42px;
+    color: #808080
+}
+
+.form-control {
+    text-align: center;
+    border: 2px solid gray;
+}
+.control-label  {
+    font-size: 18px;
+}
+
+#select2    {
+    text-align-last:center;
+}
+
+
+h2  {
+    text-align: center;
+}
+
+h1  {
+    text-align: center;
+    color: white;
+}
+
+select  {
+    margin: auto;
+    text-align:center;
+}
+
+body    {
+    background-color: 	#C0C0C0;
+}

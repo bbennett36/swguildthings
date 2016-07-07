@@ -1,0 +1,7 @@
+State,TaxRate
+OH,6.25
+PA,6.75
+MI,5.75
+IN,6.0
+CA,9.75
+NY,7.5

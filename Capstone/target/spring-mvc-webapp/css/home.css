@@ -1,0 +1,92 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jul 1, 2016, 2:41:39 PM
+    Author     : apprentice
+*/
+
+
+body {
+    background-image: url("cars.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    /*background-color: #cccccc;*/
+
+}
+
+
+.container{
+    opacity: 0.97;  
+}
+
+h1  {
+    text-align: center;
+    font-weight: bold;
+    color: black;
+    font-size: 48px;
+
+}
+
+.right{
+    opacity: 1;
+}
+
+table  {
+    background-color: whitesmoke;
+    color: black;
+    border: 2px solid black;
+    /*border-radius: 25px;*/
+}
+.jumbotron  {
+    background-image: url("requestaquote_1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: black;
+}
+
+.modal-content{
+    /*background-image: url('requestaquote_1.jpg');*/
+}
+
+.pageHeader {
+    background-color: #002D62;
+    color: #D5D5D5;
+    border: 1px solid #222222;
+    border-radius: 10px;
+    opacity: .9;
+}
+
+.navbar-background {
+    background-color: #D5D5D5;
+    color: #002D62;
+    border: 1px solid #002D62;
+}
+
+.taskDiv {
+    border-top: 1px solid #002D62;
+    padding: 10px 20px 10px 20px;
+}
+
+.section {        
+    padding-bottom: 20px;
+}
+.sectionHead {
+    background-color: #222222;
+    color: #D5D5D5;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.sectionContent {
+    background-color: #D5D5D5;
+    border: 1px solid #222222;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.tableHead {
+    background-color: #002D62;
+    color: #D5D5D5;
+}

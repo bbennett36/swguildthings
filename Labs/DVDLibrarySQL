@@ -1,0 +1,57 @@
+DVD Library
+
+CREATE
+
+insert into DVDLibrary (Title, MPAARating, Studio, DirectorsName, ReleaseDate)
+values("GoodFellas", "M", "Universal", "Bob", "2012-06-18 10:34:09")
+
+SELECT
+
+select * from DVDLibrary where id=1
+
+UPDATE
+
+update DVDLibrary
+set DirectorsName = "Steven"
+where id=3
+
+DELETE
+
+delete from DVDLibrary where id = 3
+
+LIST
+
+select * from DVDLibrary
+
+getMPAA-
+
+select MPAARating from DVDLibrary where MPAARating = "M"
+
+getStudio
+
+select Studio from DVDLibrary where Studio = "Universal"
+
+findDvdsInXYears(4)
+
+select * 
+from DVDLibrary
+where ReleaseDate >= DATE_SUB(NOW(),INTERVAL 4 YEAR);
+
+findAvgAge
+
+SELECT
+  FROM_UNIXTIME(AVG(UNIX_TIMESTAMP(ReleaseDate)))
+FROM DVDLibrary
+
+findOldest
+
+select * from DVDLibrary group by ReleaseDate asc
+
+findNewest
+
+select * from DVDLibrary group by ReleaseDate desc
+
+getDirector
+
+select DirectorsName from DVDLibrary where DirectorsName="Steven"
+

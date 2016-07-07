@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+<b:beans xmlns="http://www.springframework.org/schema/security"
+         xmlns:b="http://www.springframework.org/schema/beans"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+						http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd">
+
+    
+    <!--<b:bean id="encoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"/>-->   
+    
+    <!--<http pattern="/login" security="none"/>-->
+    <http pattern="/blogpost/all" security="none"/>
+    <http pattern="/home" security="none"/>
+    
+    <http pattern="/css/**" security="none" />
+    <http pattern="/js/**" security="none" />
+    <http pattern="/uploadimage/**" security="none" />   
+
+    <http auto-config="true" use-expressions="true" request-matcher="regex">
+        <csrf disabled="true"/>
+        <form-login login-processing-url="/j_spring_security_check"
+                    login-page="/login"
+                    authentication-failure-url="/login?login-error=1"
+        />
+        
+        <!--  - Go back to home page when user logs out -->
+        <logout logout-url="/logout" logout-success-url="/"/>
+        <!-- - Access to these endpoints require admin role -->      
+        <intercept-url pattern="/adminpages/.*" access="hasAnyRole('ROLE_ADMIN','ROLE_CONTRIBUTOR')"/>
+        
+        <intercept-url pattern="/blogpost/" access="hasAnyRole('ROLE_ADMIN','ROLE_CONTRIBUTOR')"/>
+        <intercept-url pattern="/blogpost/c" access="hasAnyRole('ROLE_USER','ROLE_ADMIN','ROLE_CONTRIBUTOR')"/>
+        <intercept-url pattern="/blogpost/publish" access="hasAnyRole('ROLE_ADMIN','ROLE_CONTRIBUTOR')"/>
+        <intercept-url pattern="/blogpost/archive" access="hasAnyRole('ROLE_ADMIN','ROLE_CONTRIBUTOR')"/>
+        <intercept-url pattern="/blogpost/createblogpost" access="hasAnyRole('ROLE_ADMIN','ROLE_CONTRIBUTOR')"/>
+        <intercept-url pattern="/blogpost/edit/.*" access="hasAnyRole('ROLE_ADMIN','ROLE_CONTRIBUTOR')"/>
+        <intercept-url pattern="/blogpost/editblogpost" access="hasAnyRole('ROLE_ADMIN','ROLE_CONTRIBUTOR')"/>
+        <intercept-url pattern="/blogpost/retrieve/.*" access="hasAnyRole('ROLE_ADMIN','ROLE_CONTRIBUTOR')"/>
+            
+        <intercept-url pattern="/admin/blogpost" access="hasAnyRole('ROLE_ADMIN','ROLE_CONTRIBUTOR')"/>
+        <intercept-url pattern="/userroles/.*" access="hasAnyRole('ROLE_ADMIN','ROLE_CONTRIBUTOR')"/>
+        <intercept-url pattern="/category/.*" access="hasAnyRole('ROLE_ADMIN','ROLE_CONTRIBUTOR')"/>
+        
+        
+        
+        <!--        <intercept-url pattern="/blogpost/c" access="hasRole('ROLE_USER')"/>
+        <intercept-url pattern="/blogpost/c" access="hasRole('ROLE_ADMIN')"/>        -->
+        
+        
+        
+    </http>
+    
+    <authentication-manager>
+        <authentication-provider>
+            <!--<password-encoder ref="encoder"/>-->
+            <jdbc-user-service id="userService" data-source-ref="dataSource" 
+                               users-by-username-query="select username,password,enabled from users where username=?"
+                               authorities-by-username-query="SELECT u.username, r.role
+                                FROM users u
+                                INNER JOIN userroles ur ON ur.user_id = u.id
+                                INNER JOIN roles r ON r.id = ur.role_id
+                                WHERE u.username = ?"
+            />
+            
+        </authentication-provider>
+    </authentication-manager>
+</b:beans>

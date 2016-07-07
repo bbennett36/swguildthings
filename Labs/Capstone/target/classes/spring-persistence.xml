@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/mvc
+                           http://www.springframework.org/schema/mvc/spring-mvc.xsd
+                           http://www.springframework.org/schema/tx 
+                           http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd"> 
+
+    <!-- Bean definitions go here -->
+    
+    <tx:annotation-driven />
+    
+    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver" />
+        <property name="url" value="jdbc:mysql://localhost:3306/tester" />
+        <property name="username" value="root" />
+        <property name="password" value="apprentice" />
+        <property name="initialSize" value="5" /> 
+        <property name="maxActive" value="10" />
+    </bean>
+    
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+    
+    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate"> 
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+    
+    <bean id="AdminPageDao" class="com.mycompany.capstone.dao.AdminPageDaoDbImpl" >
+        <constructor-arg ref="jdbcTemplate" />
+    </bean>
+    
+    <bean id="BlogPostDao" class="com.mycompany.capstone.dao.BlogPostDaoDbImpl">
+        <constructor-arg ref="jdbcTemplate" />
+    </bean>
+    
+    <bean id="CategoryDao" class="com.mycompany.capstone.dao.CategoryDaoDbImpl">
+        <constructor-arg ref="jdbcTemplate" />
+    </bean>
+    
+    <bean id="CommentDao" class="com.mycompany.capstone.dao.CommentDaoDbImpl">
+        <constructor-arg ref="jdbcTemplate" />
+    </bean>
+    
+    <bean id="HashtagDao" class="com.mycompany.capstone.dao.HashtagDaoDbImpl">
+        <constructor-arg ref="jdbcTemplate" />
+    </bean>
+    
+    <bean id="ImageDao" class="com.mycompany.capstone.dao.ImageDaoDbImpl">
+        <constructor-arg ref="jdbcTemplate" />
+    </bean>
+    
+    <bean id="RoleDao" class="com.mycompany.capstone.dao.RoleDaoDbImpl">
+        <constructor-arg ref="jdbcTemplate" />
+    </bean>
+    
+    <bean id="StatusValueDao" class="com.mycompany.capstone.dao.StatusValueDaoDbImpl">
+        <constructor-arg ref="jdbcTemplate" />
+    </bean>
+    
+    <bean id="UserDao" class="com.mycompany.capstone.dao.UserDaoDbImpl">
+        <constructor-arg ref="jdbcTemplate" />
+    </bean>
+    
+</beans>

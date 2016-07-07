@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><module codename="org.myorg.abcfiletype">
+    <module_version install_time="1467422376796" last="true" origin="installer" specification_version="1.0">
+        <file crc="2234666875" name="config/Modules/org-myorg-abcfiletype.xml"/>
+        <file crc="1668030563" name="modules/org-myorg-abcfiletype.jar"/>
+    </module_version>
+</module>

@@ -1,0 +1,35 @@
+Address Book
+
+CREATE
+
+insert into Addresses (FirstName, LastName, StreetNumber, StreetName, City, State, Zip)
+values("Bill", "Bennett", "231", "Hill rd", "Akron", "OH", "44330")
+
+SELECT
+
+Select id from Addresses where id=3
+
+UPDATE
+
+update Addresses
+set FirstName = "John"
+where id=3
+
+DELETE
+
+delete from Addresses
+where id = 4
+
+List
+Select * from Addresses
+
+ByLastName
+select LastName from Addresses
+
+ByCity
+select City from Addresses
+
+byState
+select State from Addresses
+
+byZip select Zip from Addresses

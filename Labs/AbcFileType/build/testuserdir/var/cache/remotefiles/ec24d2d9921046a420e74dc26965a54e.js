@@ -1,0 +1,2 @@
+could not open stream for https://www.interserver-coupons.com/google-maps-authorization.js 
+java.io.IOException: Server returned HTTP response code: 403 for URL: https://www.interserver-coupons.com/google-maps-authorization.js

@@ -1,0 +1,7 @@
+<<<<<<< HEAD
+1::indians
+1::reds
+=======
+2::yankees::3
+1::indians::1::2::4
+>>>>>>> 1de3e487335d8dc5e0adb8ef74653546ddb9e149

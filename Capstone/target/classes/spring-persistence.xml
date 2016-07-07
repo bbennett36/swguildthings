@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/mvc
+                           http://www.springframework.org/schema/mvc/spring-mvc.xsd
+                           http://www.springframework.org/schema/tx 
+                           http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd"> 
+
+    <!-- Bean definitions go here -->
+    
+    <tx:annotation-driven />
+    
+    <bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+        <!--<property name="host" value="mail.mycompany.com"/>-->
+        <property name="host" value="smtp.gmail.com" />
+        <property name="port" value="587" />
+        <property name="username" value="bennettglob@gmail.com" />
+        <property name="password" value="bennett36" />
+        <property name="javaMailProperties">
+            <props>
+                <prop key="mail.transport.protocol">smtp</prop>
+                <prop key="mail.smtp.auth">true</prop>
+                <prop key="mail.smtp.starttls.enable">true</prop>
+                <prop key="mail.debug">true</prop>
+            </props>
+        </property>
+    </bean>
+
+    <!-- this is a template message that we can pre-load with default state -->
+    <bean id="templateMessage" class="org.springframework.mail.SimpleMailMessage">
+        <property name="from" value="customerservice@mycompany.com"/>
+        <property name="subject" value="Your order"/>
+    </bean>
+
+    
+    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver" />
+        <property name="url" value="jdbc:mysql://localhost:3306/capstone" />
+        <property name="username" value="root" />
+        <property name="password" value="apprentice" />
+        <property name="initialSize" value="5" /> 
+        <property name="maxActive" value="10" />
+    </bean>
+    
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver" >
+        <property name="maxUploadSize" value="20971520" />
+        <property name="maxInMemorySize" value="1048576" /> 
+    </bean>
+    
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+    
+    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate"> 
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+    
+    <bean id="adminPageDao" class="com.mycompany.capstone.dao.AdminPageDaoDbImpl" >
+        <constructor-arg ref="statusValueDao" />
+        <constructor-arg ref="userDao" />
+        <constructor-arg ref="jdbcTemplate" />
+    </bean>
+    
+    <bean id="blogPostDao" class="com.mycompany.capstone.dao.BlogPostDaoDbImpl">
+        <constructor-arg ref="jdbcTemplate" />
+        <constructor-arg ref="categoryDao" />
+    </bean>
+    
+    <bean id="categoryDao" class="com.mycompany.capstone.dao.CategoryDaoDbImpl">
+        <constructor-arg ref="jdbcTemplate" />
+    </bean>
+    
+    <bean id="commentDao" class="com.mycompany.capstone.dao.CommentDaoDbImpl">
+        <constructor-arg ref="jdbcTemplate" />
+    </bean>
+    
+    <bean id="hashtagDao" class="com.mycompany.capstone.dao.HashtagDaoDbImpl">
+        <constructor-arg ref="jdbcTemplate" />
+    </bean>
+    
+    <bean id="imageDao" class="com.mycompany.capstone.dao.ImageDaoDbImpl">
+        <constructor-arg ref="jdbcTemplate" />
+    </bean>
+    
+    <bean id="roleDao" class="com.mycompany.capstone.dao.RoleDaoDbImpl">
+        <constructor-arg ref="jdbcTemplate" />
+    </bean>
+    
+    <bean id="statusValueDao" class="com.mycompany.capstone.dao.StatusValueDaoDbImpl">
+        <constructor-arg ref="jdbcTemplate" />
+    </bean>
+    
+    <bean id="userDao" class="com.mycompany.capstone.dao.UserDaoDbImpl">
+        <constructor-arg ref="jdbcTemplate" />
+    </bean>
+    
+    <bean id="quoteDao" class="com.mycompany.capstone.dao.QuoteDaoDbImpl">
+        <constructor-arg ref="jdbcTemplate" />
+        <property name="mailSender" ref="mailSender"/>
+        <property name="templateMessage" ref="templateMessage"/>
+    </bean>
+    
+</beans>

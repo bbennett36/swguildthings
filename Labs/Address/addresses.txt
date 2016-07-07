@@ -1,0 +1,6 @@
+1::Brennan::Bennett::House::2821::lee rd::OH::Akron::USA::231::44224
+2::Bob::Miller::Apartment::123::sesame street::PA::Pittsburgh::USA::123::32213
+4::Sam::Wheeler::House::123::Front st::OH::Cleveland::USA::123::442311
+5::Brandon::Bennett::house::123::front::OH::Akron::USA::12312::44321
+6::Bob::Smith::House::123::front::CA::Sacramento::USA::123::44242
+3::Peter::Piper::House::231::howe::CA::Miami::USA::12321::42123

@@ -1,0 +1,105 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : May 27, 2016, 8:10:00 AM
+    Author     : apprentice
+*/
+
+form    {
+    text-align: center;
+    font-weight: bold;
+}
+
+h1  {
+    text-align: center;
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: 50px;
+    font-family: "lato";
+
+}
+
+@font-face {
+    font-family: lato;
+    src: url("Lato-BlackItalic.ttf");
+}
+
+
+#ic  {
+    text-align: center;
+    font-weight: bold;
+}
+
+body    {
+    background-color: 	#808080;
+    color: black;
+}
+
+.navbar {
+    display: inline-block;
+    float: none;
+    font-size: 32px;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+    text-align: center;
+}
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    background-color: black;
+    font-size: 30px;
+    color: white;
+    font-family: "lato";
+    font-weight: bold;
+}
+
+#factor {
+    width: 300px;
+    text-align: center;
+}
+
+input   {
+    text-align: center;
+}
+
+.input-group    {
+    width: 300px;
+    margin: 0 auto;
+    float: none;
+}
+
+
+h2{
+    text-align: center;
+}
+
+#ls {
+    text-align: left;
+}
+
+#again a    {
+    text-decoration: none;
+    color: white;
+}
+
+#again2 a    {
+    text-decoration: none;
+    color: black;
+}
+
+#ls2    {
+    text-align: left;
+    width: 300px;
+}

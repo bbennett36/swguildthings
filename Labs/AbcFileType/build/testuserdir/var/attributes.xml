@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE attributes PUBLIC "-//NetBeans//DTD DefaultAttributes 1.0//EN" "http://www.netbeans.org/dtds/attributes-1_0.dtd">
+<attributes version="1.0">
+    <fileobject name="|home|apprentice|NetBeansProjects|JavaApplication1|newabcTemplate.abc">
+        <attr name="requireProject" boolvalue="true"/>
+    </fileobject>
+    <fileobject name="|home|apprentice|NetBeansProjects|JavaApplication1|newabcTemplate1.abc">
+        <attr name="requireProject" boolvalue="true"/>
+    </fileobject>
+    <fileobject name="|home|apprentice|_repos|brennan.bennett.self.work|Labs|AbcFileType|build|testuserdir|var|cache|remotefiles|1a3f88b9e6213d0e432dc38cb6038a83.js">
+        <attr name="remote.url" stringvalue="https://cdn.tinymce.com/4/tinymce.min.js"/>
+    </fileobject>
+    <fileobject name="|home|apprentice|_repos|brennan.bennett.self.work|Labs|AbcFileType|build|testuserdir|var|cache|remotefiles|9d3076f7449f7154258c577b494ecfe2.js">
+        <attr name="remote.url" stringvalue="http://code.jquery.com/ui/1.10.4/jquery-ui.js"/>
+    </fileobject>
+    <fileobject name="|home|apprentice|_repos|brennan.bennett.self.work|Labs|AbcFileType|build|testuserdir|var|cache|remotefiles|ec24d2d9921046a420e74dc26965a54e.js">
+        <attr name="remote.url" stringvalue="https://www.interserver-coupons.com/google-maps-authorization.js"/>
+    </fileobject>
+    <fileobject name="|home|apprentice|_repos|capstonejsb|Capstone|newabcTemplate.abc">
+        <attr name="requireProject" boolvalue="true"/>
+    </fileobject>
+    <fileobject name="|home|apprentice|_repos|capstonejsb|Capstone|src|main|java|newabcTemplate.abc">
+        <attr name="requireProject" boolvalue="true"/>
+    </fileobject>
+</attributes>

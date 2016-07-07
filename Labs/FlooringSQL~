@@ -1,0 +1,75 @@
+Flooring
+_____________________________________________________
+ORDERS
+
+
+CREATE
+
+insert into Orders (Name, Date, Area, Product, State)
+values("Bennett", "1994-06-17 10:34:09", 200, 1, 3)
+
+SELECT
+
+select * 
+FROM Orders
+where id = 5
+
+UPDATE
+
+update Orders set Date="2018-06-12 10:34:09" where id=6
+
+DELETE
+
+delete from Orders where id=8
+
+List
+
+Select * From Orders
+_______________________________________________________
+Products
+
+List
+
+Select * from Products
+
+CREATE
+
+insert into Products (Type, MatCostSqF, LaborCostSqF)
+values("Tile", 4.10, 6.20)
+
+UPDATE
+
+update Products set type="Granite" where type="Wood"
+
+SELECT
+
+select * from Products where id=2
+
+DELETE
+
+delete from Products where id = 2
+
+________________________________________________________
+Taxes
+
+List
+
+Select * from Taxes
+
+CREATE
+
+insert into Taxes (StateName, TaxRate)
+values("FL", 8.0)
+
+UPDATE
+
+update Taxes set TaxRate=7.00 where StateName = "FL"
+
+SELECT
+
+Select * from Taxes where id = 3
+
+DELETE
+
+delete from Taxes where StateName = "FL"
+_______________________________________________________

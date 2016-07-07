@@ -1,0 +1,8 @@
+1::brennan::bennett::231.2
+<<<<<<< HEAD
+2::bob::miller::901.2
+=======
+2::bob::miller::202.2
+3::michael::smith::202.2
+4::john::smith::200.2
+>>>>>>> 1de3e487335d8dc5e0adb8ef74653546ddb9e149
